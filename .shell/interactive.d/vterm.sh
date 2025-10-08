@@ -32,4 +32,10 @@ if [ "$INSIDE_EMACS" = 'vterm' ]; then
     }
     # Will be overwritting later by Bash or ZSH
     PS1=$PS1'$(vterm_prompt_end)'
+
+    # Open guake tab inside vterm
+    _vterm_open_guake () {
+        guake --show --new-tab="$PWD"
+    }
+    alias vguake=_vterm_open_guake
 fi
